@@ -14,10 +14,12 @@ const Manager = () => {
 
     function showpassword() {
         if (ref.current.src.includes("closedeye.png")) {
-            ref.current.src = "public/eye.png";
+            // ref.current.src = "public/eye.png";
+               ref.current.src = `${import.meta.env.BASE_URL}eye.png`;
             ref.current.parentElement.previousElementSibling.type = "text";
         } else {
-            ref.current.src = "public/closedeye.png";
+            // ref.current.src = "public/closedeye.png";
+              ref.current.src = `${import.meta.env.BASE_URL}closedeye.png`;
             ref.current.parentElement.previousElementSibling.type = "password";
         }
     }
@@ -60,7 +62,7 @@ const Manager = () => {
                             <input value={form.username} placeholder='Enter UserName' onChange={handleChange} type="text" className="border rounded-full p-2 flex-1  border-green-500 " name='username' />
                             <div className="relative">
                                 <input value={form.password} placeholder='Enter Password' onChange={handleChange} type="password" className="border rounded-full p-2 flex-1  border-green-500 " name='password' />
-                                <span className='absolute right-0 top-1 cursor-pointer' onClick={showpassword}><img className='size-9 p-1 m-1' ref={ref} src="public/closedeye.png" alt="" /></span>
+                                <span className='absolute right-0 top-1 cursor-pointer' onClick={showpassword}><img className='size-9 p-1 m-1'  src={`${import.meta.env.BASE_URL}closedeye.png`} alt="tooglePassword" /></span>
                             </div>
                         </div>
                     </div>
