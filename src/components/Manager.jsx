@@ -52,10 +52,10 @@ const Manager = () => {
                     <div>
                         <p className='text-pink-600 text-center text-2xl'>your Own Password Manager</p>
                     </div>
-                    <div className='flex flex-col gap-8 p-4 rounded-lg text-black justify-between' >
-                        <input value={form.site} placeholder='Write You Website URL' onChange={handleChange} type="text" className="border rounded-full p-2 mb-2 border-green-500 w-full" name='site' />
+                    <div className='flex flex-col gap-8 p-4 mx-auto rounded-lg text-black justify-between' >
+                        <input value={form.site} placeholder='Write You Website URL' onChange={handleChange} type="text" className="border rounded-full p-2 mx-auto mb-2 border-green-500 w-full" name='site' />
                         <div className="flex gap-5 ">
-                            <input value={form.username} placeholder='Enter UserName' onChange={handleChange} type="text" className="border rounded-full p-2 flex-1  border-green-500 " name='username' />
+                            <input value={form.username} placeholder='Enter UserName' onChange={handleChange} type="text" className="border rounded-full p-2 mx-auto flex-1  border-green-500 " name='username' />
                             <div className="relative">
                                 <input
                                     value={form.password}
@@ -81,7 +81,7 @@ const Manager = () => {
                         </div>
                     </div>
                     <div className='flex justify-center items-center   '>
-                        <button onClick={SavePassword} className='flex justify-center items-center gap-3  bg-pink-600 font-bold w-fit  rounded-full p-4 text-black hover:bg-green-500 transition-colors '>
+                        <button onClick={SavePassword} className='flex justify-center min-md: items-center gap-3  bg-pink-600 font-bold w-fit  rounded-full p-4 text-black hover:bg-green-500 transition-colors '>
                             <lord-icon
                                 src="https://cdn.lordicon.com/jgnvfzqg.json"
                                 trigger="hover"
