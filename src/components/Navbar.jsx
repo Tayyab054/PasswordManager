@@ -3,7 +3,6 @@ import React from 'react'
 const Navbar = () => {
     return (
         <nav className=" mx-auto  p-2 pb-2 pt-2 border-b-2 border-green-500 ">
-
             <div className="mycontainer px-16 py-3 flex flex-wrap justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center text-3xl font-bold">
@@ -18,5 +17,4 @@ const Navbar = () => {
         </nav>
     )
 }
-
 export default Navbar

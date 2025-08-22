@@ -7,19 +7,18 @@ const Manager = () => {
     useEffect(() => {
         let passwords = localStorage.getItem("passwords");
         if (passwords) {
-            setpasswordArry (JSON.parse(passwords));
+            setpasswordArry(JSON.parse(passwords));
         }
 
     }, [])
-
     function showpassword() {
-        if (ref.current.src.includes("closedeye.png")) {
-            // ref.current.src = "public/eye.png";
-               ref.current.src = `${import.meta.env.BASE_URL}eye.png`;
+        const currentSrc = ref.current.src;
+
+        if (currentSrc.endsWith("closedeye.png")) {
+            ref.current.src = `${import.meta.env.BASE_URL}eye.png`;
             ref.current.parentElement.previousElementSibling.type = "text";
         } else {
-            // ref.current.src = "public/closedeye.png";
-              ref.current.src = `${import.meta.env.BASE_URL}closedeye.png`;
+            ref.current.src = `${import.meta.env.BASE_URL}closedeye.png`;
             ref.current.parentElement.previousElementSibling.type = "password";
         }
     }
@@ -41,9 +40,6 @@ const Manager = () => {
     }
     return (
         <>
-
-            <div className="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-green-200 bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>
-
             <div className="mx-auto  mycontainer ">
                 <div className="text-pink-600 flex flex-col p-4 justify-center gap-5">
                     <div className="flex flex-col items-center  text-3xl font-bold py-4 gap-2 ">
@@ -61,8 +57,26 @@ const Manager = () => {
                         <div className="flex gap-5 ">
                             <input value={form.username} placeholder='Enter UserName' onChange={handleChange} type="text" className="border rounded-full p-2 flex-1  border-green-500 " name='username' />
                             <div className="relative">
-                                <input value={form.password} placeholder='Enter Password' onChange={handleChange} type="password" className="border rounded-full p-2 flex-1  border-green-500 " name='password' />
-                                <span className='absolute right-0 top-1 cursor-pointer' onClick={showpassword}><img className='size-9 p-1 m-1'  src={`${import.meta.env.BASE_URL}closedeye.png`} alt="tooglePassword" /></span>
+                                <input
+                                    value={form.password}
+                                    placeholder="Enter Password"
+                                    onChange={handleChange}
+                                    type="password"
+                                    className="border rounded-full p-2 flex-1 border-green-500"
+                                    name="password"
+                                    id="passwordField"
+                                />
+                                <span
+                                    className="absolute right-0 top-1 cursor-pointer"
+                                    onClick={showpassword}
+                                >
+                                    <img
+                                        ref={ref}  // ✅ attach ref here
+                                        className="size-9 p-1 m-1"
+                                        src={`${import.meta.env.BASE_URL}closedeye.png`}
+                                        alt="togglePassword"
+                                    />
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -81,28 +95,26 @@ const Manager = () => {
                     <h2 className='py-3 text-2xl text-pink-600 font-bold'> Your Passwords</h2>
                     {passwordArry.length === 0 && <div className='text-center text-pink-600 font-bold'>No Passwords Found</div>}
                     {passwordArry.length != 0 &&
-                    <table className="table-auto w-full rounded-md  overflow-hidden">
-                        <thead className='bg-green-700 text-white  '>
-                            <tr>
-                                <th className="py-3">WEBSITE URL</th>
-                                <th className="py-3">UserName</th>
-                                <th className="py-3">Password</th>
-                            </tr>
-                        </thead>
-                        <tbody className='bg-green-100'>
-                            {passwordArry.map((item, index) => (
-                                 <tr key={index}>
-                                    <td className='text-center w-32 py-2 border-1 border-white' ><a href={item.site} target='_blank'>{item.site}</a></td>
-                                    <td className='text-center w-32 py-2 border-1 border-white'>{item.username}</td>
-                                    <td className='text-center w-32 py-2 border-1 border-white'>{item.password}</td>
+                        <table className="table-auto w-full rounded-md  overflow-hidden">
+                            <thead className='bg-green-700 text-white  '>
+                                <tr>
+                                    <th className="py-3">WEBSITE URL</th>
+                                    <th className="py-3">UserName</th>
+                                    <th className="py-3">Password</th>
                                 </tr>
-                            ))} 
-                            
-                        </tbody>
-                    </table>}
-                </div>
+                            </thead>
+                            <tbody className='bg-green-100'>
+                                {passwordArry.map((item, index) => (
+                                    <tr key={index}>
+                                        <td className='text-center w-32 py-2 border-1 border-white' ><a href={item.site} target='_blank'>{item.site}</a></td>
+                                        <td className='text-center w-32 py-2 border-1 border-white'>{item.username}</td>
+                                        <td className='text-center w-32 py-2 border-1 border-white'>{item.password}</td>
+                                    </tr>
+                                ))}
 
-                    
+                            </tbody>
+                        </table>}
+                </div>
             </div>
         </>
     )
