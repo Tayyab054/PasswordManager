@@ -1,12 +1,58 @@
-# React + Vite
+# 🔐 Password Manager (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **secure and lightweight Password Manager** built using **React + Vite**.  
+This project helps users **save, manage, and copy passwords** with a clean UI and fast performance.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo  
+👉 View App https://tayyab054.github.io/PasswordManager/ 
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Features  
+
+- ✅ **Add & store passwords** securely in local storage  
+- ✅ **Copy to clipboard** functionality  
+- ✅ **Responsive design** for mobile & desktop  
+- ✅ **Modern UI** with React components  
+- ⚡ Powered by **Vite** for lightning-fast development  
+
+---
+
+## 🚀 Getting Started  
+
+1️⃣ Clone the repository  
+```bash
+git clone https://github.com/Tayyab054/PasswordManager.git
+
+2️⃣ Install dependencies
+cd password-manager
+npm install
+
+3️⃣ Start development server
+npm run dev
+
+4️⃣ Build for production
+npm run build
+
+🛠️ Built With
+
+⚛️ React 18 – UI library
+
+⚡ Vite – Next-gen frontend tooling
+
+🎨 CSS3 / Tailwind (optional) – Styling
+
+📌 Future Improvements
+
+🔹 Add encryption for extra security
+
+🔹 Implement user authentication (login/signup)
+
+🔹 Sync passwords with backend / cloud storage
+
+👨‍💻 Author
+Tayyab Ali
+
+
