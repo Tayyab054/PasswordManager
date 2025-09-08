@@ -1,4 +1,4 @@
-# 🔐 Password Manager (React + Vite)
+# 🔐 Password Manager (React + Vite+Tailwindcss)
 
 A **secure and lightweight Password Manager** built using **React + Vite**.  
 This project helps users **save, manage, and copy passwords** with a clean UI and fast performance.  
